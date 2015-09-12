@@ -114,11 +114,6 @@ class: middle, center
 ---
 class: middle, center
 
-![ruby method lookup](public/img/method2.JPG)
-
----
-class: middle, center
-
 ![rust](public/img/rust3.JPG)
 
 ---
@@ -126,6 +121,116 @@ class: middle, left
 
 ## `$ rustc foo.rs`
 ## `$ ./foo`
+
+---
+class: middle, center
+
+![ruby method lookup](public/img/method2.JPG)
+
+---
+class: middle
+
+```ruby
+def foo(x)
+  5
+end
+
+foo(10)
+```
+
+---
+class: middle, center
+
+![rust](public/img/rust3.JPG)
+
+---
+class: middle
+
+```cpp
+fn foo(x: i32) -> i32 {
+    5
+}
+
+fn main() {
+    foo(10);
+}
+```
+
+---
+class: middle
+
+```asm
+foo:
+	movl	$5, %eax
+	movb	$61, -1(%rsp)
+	movl	%edi, -8(%rsp)
+	retq
+
+main:
+	pushq	%rax
+	movl	$10, %edi
+	callq	foo
+	movl	%eax, 4(%rsp)
+	popq	%rax
+	retq
+```
+
+---
+class: middle
+
+```ruby
+class Foo
+  def hello
+    "hello"
+  end
+end
+
+f = Foo.new
+f.hello()
+```
+
+---
+class: middle, center
+
+![rust](public/img/rust3.JPG)
+
+---
+class: middle
+
+```cpp
+struct Foo;
+
+impl Foo {
+    fn hello(&self) -> &str {
+        "hello"
+    }
+}
+
+fn main() {
+    let f = Foo;
+    f.hello();
+}
+```
+
+---
+class: middle, center
+
+## 82 lines of assembly
+
+---
+class: middle, center
+
+# OPTIMIZATIONS
+
+---
+class: middle
+
+## 30 lines of assembly
+
+```asm
+main:
+    retq
+```
 
 ---
 class: middle, center
